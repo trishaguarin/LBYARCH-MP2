@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-extern void imgCvtGrayIntToDouble(int rows, int cols, double* matrix);
+extern void imgCvtGrayIntToDouble(int rows, int cols, int* input, double* output);
 
 void displayMatrix(int rows, int cols, double* matrix) {
     for (int i = 0; i < rows; i++) {
@@ -26,9 +26,10 @@ int main() {
         return 1;
     }
 
-    double* matrix = (double*)malloc(rows * cols * sizeof(double));
+    int* input = (int*)malloc(rows * cols * sizeof(int));
+    double* output = (double*)malloc(rows * cols * sizeof(double));
 
-    if (!matrix) {
+    if (!input || !output) {
         printf("Memory allocation failed\n");
         return 1;
     }
@@ -36,12 +37,15 @@ int main() {
     printf("Enter %d x %d elements:\n", rows, cols);
 
     for (int i = 0; i < rows * cols; i++) {
-        scanf_s("%lf", &matrix[i]);
+        scanf_s("%d", &input[i]);
     }
 
-    imgCvtGrayIntToDouble(rows, cols, matrix);
+    imgCvtGrayIntToDouble(rows, cols, input, output);
 
-    displayMatrix(rows, cols, matrix);
+    displayMatrix(rows, cols, output);
 
-    free(matrix);
+    free(input);
+    free(output);
+
+    return 0;
 }

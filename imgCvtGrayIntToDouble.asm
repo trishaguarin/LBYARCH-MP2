@@ -6,33 +6,35 @@ section .text
 imgCvtGrayIntToDouble:
     ; rcx = rows
     ; rdx = columns
-    ; r8 = matrix first element pointer
+    ; r8 = input array pointer
+    ; r9 = output array pointer
 
-    mov r9,  r8         ; matrix pointer
+    ; eax = total elements
+    ; r10d = array index
+    ; r11d = integer value
+    ; xmm0 = 255.0
+    ; xmm1 = double value
 
-    mov rax, 255
-    cvtsi2sd xmm1, rax  ; 255.0 constant
+    mov eax, ecx
+    imul eax, edx                   ; get total elements
 
-row_loop:
-    cmp rcx, 0
-    jz near done
-    mov r10, rdx        ; reset column counter
+    xor r10d, r10d                  ; initialize array index
 
-col_loop:
-    cmp r10, 0
-    jz near next_row
+    mov rcx, 255
+    cvtsi2sd xmm0, rcx              ; load 255.0
 
-    movsd xmm0, [r9]    ; load number
-    divsd xmm0, xmm1    ; divide by 255
-    movsd [r9], xmm0    ; store back
+loop:
+    cmp r10d, eax
+    je done
 
-    add r9, 8           ; next element
-    dec r10
-    jmp near col_loop
+    mov r11d, [r8 + r10 * 4]       ; load element
+    cvtsi2sd xmm1, r11d             ; convert to double
+    divsd xmm1, xmm0                ; divide by 255
+    movsd [r9 + r10 * 8], xmm1     ; store in output array
 
-next_row:
-    dec rcx
-    jmp near row_loop
+    inc r10d
+    jmp loop
 
 done:
+    xor rax, rax                    ; clear rax
     ret
