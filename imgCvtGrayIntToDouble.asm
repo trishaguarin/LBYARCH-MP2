@@ -27,10 +27,10 @@ loop:
     cmp r10d, eax
     je done
 
-    mov r11d, [r8 + r10 * 4]       ; load element
+    mov r11d, [r8 + r10 * 4]        ; load element
     cvtsi2sd xmm1, r11d             ; convert to double
     divsd xmm1, xmm0                ; divide by 255
-    movsd [r9 + r10 * 8], xmm1     ; store in output array
+    movsd [r9 + r10 * 8], xmm1      ; store in output array
 
     inc r10d
     jmp loop
