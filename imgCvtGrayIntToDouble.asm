@@ -10,7 +10,7 @@ imgCvtGrayIntToDouble:
     ; r9 = output array pointer
 
     ; eax = total elements
-    ; r10d = array index
+    ; r10 = array index
     ; r11d = integer value
     ; xmm0 = 255.0
     ; xmm1 = double value
@@ -18,13 +18,13 @@ imgCvtGrayIntToDouble:
     mov eax, ecx
     imul eax, edx                   ; get total elements
 
-    xor r10d, r10d                  ; initialize array index
+    xor r10, r10                    ; initialize array index
 
     mov rcx, 255
     cvtsi2sd xmm0, rcx              ; load 255.0
 
 loop:
-    cmp r10d, eax
+    cmp r10, eax
     je done
 
     mov r11d, [r8 + r10 * 4]        ; load element
@@ -32,7 +32,7 @@ loop:
     divsd xmm1, xmm0                ; divide by 255
     movsd [r9 + r10 * 8], xmm1      ; store in output array
 
-    inc r10d
+    inc r10
     jmp loop
 
 done:
