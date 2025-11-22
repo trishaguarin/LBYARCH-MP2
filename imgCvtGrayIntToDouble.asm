@@ -1,6 +1,9 @@
 default rel
 global imgCvtGrayIntToDouble
 
+section .data
+reciprocal_255 dq 0.003921568627  ; 1/255 as double
+
 section .text
 
 imgCvtGrayIntToDouble:
@@ -29,7 +32,8 @@ loop:
 
     mov r11d, [r8 + r10 * 4]        ; load element
     cvtsi2sd xmm1, r11d             ; convert to double
-    divsd xmm1, xmm0                ; divide by 255
+    movsd xmm0, qword [reciprocal_255]  
+    mulsd xmm1, xmm0
     movsd [r9 + r10 * 8], xmm1      ; store in output array
 
     inc r10
