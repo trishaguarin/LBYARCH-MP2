@@ -24,7 +24,7 @@ imgCvtGrayIntToDouble:
     cvtsi2sd xmm0, rcx              ; load 255.0
 
 loop:
-    cmp r10, eax
+    cmp r10d, eax
     je done
 
     mov r11d, [r8 + r10 * 4]        ; load element
