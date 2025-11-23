@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="LBYARCH-MP2.vcxproj" Id="6ec4b334-5202-4636-8a9c-4d029b2b39bb" />
+</Solution>

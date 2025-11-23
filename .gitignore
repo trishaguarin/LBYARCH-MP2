@@ -1,0 +1,69 @@
+## Build folders
+Debug/
+Release/
+x64/
+x86/
+ipch/
+build/
+
+## Visual Studio cache and user files
+.vs/
+*.VC.db
+*.VC.opendb
+
+## Object files and intermediates
+*.obj
+*.o
+*.lo
+*.sbr
+*.pch
+*.pdb
+*.idb
+*.ilk
+
+## Generated binaries
+*.exe
+*.dll
+*.lib
+*.exp
+
+## Assembly listing / output
+*.lst
+*.map
+
+## Logs
+*.log
+
+## Auto-generated files
+*.tlog
+*.lastbuildstate
+
+## Temporary files
+*.tmp
+*.temp
+*.cache
+*.db
+*.opendb
+*.pidb
+
+## User-specific project files
+*.user
+*.suo
+*.userosscache
+*.userprefs
+
+## Solution and project extras
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+Generated Files/
+
+## MSBuild
+*.FileListAbsolute.txt
+
+## Crash dumps
+*.dmp
+
+## Others
+Thumbs.db
+desktop.ini
