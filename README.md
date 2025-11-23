@@ -23,11 +23,11 @@ The algorithm converts each pixel value of the grayscale image from its unsigned
 
 ## Program Output
 #### Manual Input
-![Screenshot of the output of the program set to manual input](/img/manual_input)
+![Screenshot of the output of the program set to manual input](/img/manual_input.png)
 #### Random Pixel Values
-![Screenshot of the output of the program set to random pixel values](/img/random_image)
+![Screenshot of the output of the program set to random pixel values](/img/random_image.png)
 #### Benchmark
-![Screenshot of the output of the program set to benchmark](/img/benchmark)
+![Screenshot of the output of the program set to benchmark](/img/benchmark.png)
 ## How to Run
 
 ## Video Demo
