@@ -1,9 +1,26 @@
-//simple input-output only, no timer/trials still
-
 #include <stdio.h>
 #include <stdlib.h>
 
 extern void imgCvtGrayIntToDouble(int rows, int cols, int* input, double* output);
+
+void generateRandomImage(int* image, int rows, int cols) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            image[i * cols + j] = rand() % 256;
+        }
+    }
+}
+
+void printIntImage(int* image, int rows, int cols) {
+    printf("Input Image (int):\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("%d ", image[i * cols + j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+}
 
 void printDoubleImage(double* image, int rows, int cols) {
     printf("\nOutput Image (double):\n");
@@ -25,13 +42,9 @@ int main() {
     int* arr = malloc(rows * cols * sizeof(int));
     double* darr = malloc(rows * cols * sizeof(double));
 
-    printf("Enter %d x %d image pixels (integers):\n", rows, cols);
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            scanf_s("%d", &arr[i * cols + j]);
-        }
-    }
+	generateRandomImage(arr, rows, cols); //input image is automatically generated 
 
+	printIntImage(arr, rows, cols);
     imgCvtGrayIntToDouble(rows, cols, arr, darr);
     printDoubleImage(darr, rows, cols);
 
