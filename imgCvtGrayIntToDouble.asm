@@ -15,7 +15,7 @@ imgCvtGrayIntToDouble:
     ; eax = total elements
     ; r10 = array index
     ; r11d = integer value
-    ; xmm0 = 255.0
+    ; xmm0 = reciprocal of 255
     ; xmm1 = double value
 
     mov eax, ecx
