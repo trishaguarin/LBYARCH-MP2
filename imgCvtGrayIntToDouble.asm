@@ -23,17 +23,14 @@ imgCvtGrayIntToDouble:
 
     xor r10, r10                    ; initialize array index
 
-    mov rcx, 255
-    cvtsi2sd xmm0, rcx              ; load 255.0
-
 loop:
     cmp r10d, eax
     je done
 
     mov r11d, [r8 + r10 * 4]        ; load element
     cvtsi2sd xmm1, r11d             ; convert to double
-    movsd xmm0, qword [reciprocal_255]  
-    mulsd xmm1, xmm0
+    movsd xmm0, qword [reciprocal_255]  ; load 1/255
+    mulsd xmm1, xmm0                    ; multiply
     movsd [r9 + r10 * 8], xmm1      ; store in output array
 
     inc r10
