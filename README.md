@@ -11,23 +11,27 @@ The algorithm converts each pixel value of the grayscale image from its unsigned
 ## Execution Time
 | Version | Image Size | Execution Time |
 |---------|------------|----------------|
-| C | - | - |
-| Assembly | - | - |
+| C | 10 x 10 | - |
+| C | 100 x 100 | - |
+| C | 1000  x 1000 | - |
+| Assembly | 10  x 10 | 0.390 microseconds |
+| Assembly | 100  x 100 | 32.170 microseconds |
+| Assembly | 1000  x 1000 | 2268.020 microseconds |
 
 ## Short Performance Analysis
----
+
 
 ## Program Output
 #### Manual Input
-
-#### Random Image Test
-
-#### Benchmark Output
-
+![Screenshot of the output of the program set to manual input](/img/manual_input)
+#### Random Pixel Values
+![Screenshot of the output of the program set to random pixel values](/img/random_image)
+#### Benchmark
+![Screenshot of the output of the program set to benchmark](/img/benchmark)
 ## How to Run
 
 ## Video Demo
-[Youtube Link](https://youtube.com/)
+[Youtube Link](https://youtu.be/3cTmIiAlZjA)
 
 ## Authors
 Ronnie Abiog Jr.
