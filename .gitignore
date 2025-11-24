@@ -67,3 +67,6 @@ Generated Files/
 ## Others
 Thumbs.db
 desktop.ini
+
+# C benchmark file
+!pureCcode.exe
