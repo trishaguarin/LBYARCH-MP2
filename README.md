@@ -4,16 +4,16 @@
 
 ## Project Description
 
-A grayscale image can be represented in a 2 dimensional array with each cell representing the pixel value. Some Libraries represent the pixels using 8 bit unsigned integer. 0 for black, 255 for white, and all other gray values in between. While some Libraries represent it as double float values between 0 to 1. 0 for black, 1 for white, and all other gray values in between.
+A grayscale image can be represented in a 2-dimensional array, with each cell representing the pixel value. Some Libraries represent the pixels using 8 8-bit unsigned integers. 0 for black, 255 for white, and all other gray values in between. While some Libraries represent it as double float values between 0 to 1. 0 for black, 1 for white, and all other gray values in between.
 
 The algorithm converts each pixel value of the grayscale image from its unsigned integer to its double representation. This project implements and compares the performance of a simple grayscale image representation implemented in C and x86-64 Assembly.
 
 ## Execution Time
 | Version | Image Size | Execution Time |
 |---------|------------|----------------|
-| C | 10 x 10 | - |
-| C | 100 x 100 | - |
-| C | 1000  x 1000 | - |
+| C | 10 x 10 | 0.887 microseconds |
+| C | 100 x 100 | 78.610 microseconds |
+| C | 1000  x 1000 | 4950.203 microseconds |
 | Assembly | 10  x 10 | 0.390 microseconds |
 | Assembly | 100  x 100 | 32.170 microseconds |
 | Assembly | 1000  x 1000 | 2268.020 microseconds |
