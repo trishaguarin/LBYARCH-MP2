@@ -1,6 +1,5 @@
 # LBYARCH-MP2
 ## Grayscale Image Representation Conversion
-### C and x86-64 Assembly Performance Comparison
 
 ## Project Description
 
@@ -19,7 +18,7 @@ The algorithm converts each pixel value of the grayscale image from its unsigned
 | Assembly | 1000  x 1000 | 2312.103 microseconds |
 
 ## Short Performance Analysis
-The benchmark results clearly shows that the x86-64 Assembly implementation of the function outperforms the C implementation of the function across all image sizes tested. For the 10x10 image, Assembly runs 2.8x faster C. For 100x100, Assembly achieves its highest performance boost at 4.0× faster than C. For the 1000x1000 image, the advantage of Assembly slightly decreases to 1.8x faster than C, but still shows a significant improvement. 
+The benchmark results clearly show that the x86-64 Assembly implementation of the function outperforms the C implementation of the function across all image sizes tested. For the 10x10 image, Assembly runs 2.8x faster C. For 100x100, Assembly achieves its highest performance boost at 4.0× faster than C. For the 1000x1000 image, the advantage of Assembly slightly decreases to 1.8x faster than C, but still shows a significant improvement. 
 
 Despite the varying speed improvement of the Assembly implementation across the different image sizes, it still consistently performs faster than the C implementation, highlighting the efficiency of a low-level programming language in handling instructions and memory operations.
 
@@ -36,7 +35,7 @@ Despite the varying speed improvement of the Assembly implementation across the 
 ## How to Run
 1. Clone the repository
 2. Using Visual Studio, open the .slnx file
-3. Replace main.c contents with main.c, generaterandom.c, or averageexecutiontime.c for manual input, random image values, or Assembly benchmark
+3. Replace main.c contents with main.c, generaterandom.c, or averageexecutiontime.c for manual input, random image values, or Assembly benchmark, respectively.
 4. Build and run in Visual Studio
 5. For the C benchmark, run pureCcode.exe or manually build pureCcode.c and run the .exe file
 
