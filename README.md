@@ -1,5 +1,5 @@
 # LBYARCH-MP2
-## Grayscale Image Representation Conversion
+# Grayscale Image Representation Conversion
 
 ## Project Description
 
